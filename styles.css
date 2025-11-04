@@ -1,0 +1,112 @@
+/* Custom styles for the Task Planner */
+
+/* Calendar customization */
+.fc {
+    /* FullCalendar uses its own styles, but we can override them */
+}
+
+.fc-event {
+    cursor: pointer;
+    border: none !important;
+    padding: 2px 4px;
+    font-size: 0.875rem;
+}
+
+.fc-event:hover {
+    opacity: 0.9;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}
+
+/* Modal animation */
+#taskModal {
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Task event colors based on duration */
+.fc-event.short-task {
+    background-color: #10b981 !important; /* Green for short tasks (< 2 hours) */
+}
+
+.fc-event.medium-task {
+    background-color: #3b82f6 !important; /* Blue for medium tasks (2-4 hours) */
+}
+
+.fc-event.long-task {
+    background-color: #8b5cf6 !important; /* Purple for long tasks (> 4 hours) */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .fc-toolbar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .fc-toolbar-chunk {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Toast notification animation */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#toast:not(.hidden) {
+    animation: slideInRight 0.3s ease-out;
+}
+
+/* Calendar height */
+#calendar {
+    min-height: 600px;
+}
+
+/* Loading state */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Form validation */
+input:invalid:not(:placeholder-shown) {
+    border-color: #ef4444;
+}
+
+input:valid:not(:placeholder-shown) {
+    border-color: #10b981;
+}
