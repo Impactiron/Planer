@@ -1,0 +1,24 @@
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.backup
+*.bak
+
+# Logs
+*.log
+npm-debug.log*
+
+# Don't ignore the main files
+!index.html
+!app.js
+!styles.css
+!README.md
